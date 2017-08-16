@@ -16,6 +16,8 @@
                     <div class="wizard m-b-20">
                         <ul class="wizard_menu">
                             <li id="menu_driver" class="incomplete">
+
+
                                 <a href="javascript:void(0)">1</a>
                                 <span>Driver Registration</span>
                             </li>
