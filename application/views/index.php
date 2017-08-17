@@ -70,7 +70,7 @@
                                         </tr>
                                         <tr>
                                             <td>2</td>
-                                            <td>Vishal Landepatil</td>
+                                            <td>Vishal Patil</td>
                                             <td>9860402800</td>
                                             <td>Maruti suzuki</td>
                                             <td>Maruti - 800</td>
