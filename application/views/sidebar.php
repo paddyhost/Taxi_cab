@@ -13,7 +13,7 @@
 
     <ul class="main-menu">
         <li>
-            <a href=""><i class="zmdi zmdi-account"></i> View Profile</a>
+            <a href=""><i class="zmdi zmdi-account"></i>View Profile</a>
         </li>
         <li>
             <a href=""><i class="zmdi zmdi-input-antenna"></i> Privacy Settings</a>
@@ -22,10 +22,10 @@
             <a href=""><i class="zmdi zmdi-settings"></i> Settings</a>
         </li>
         <li>
-            <a href="<?php echo base_url() ?>admin/"><i class="zmdi zmdi-time-restore"></i> Logout</a>
+            <a href="http://localhost/taxi_cab/Admin/logout"><i class="zmdi zmdi-time-restore"></i> Logout</a>
         </li>
         <li class="active">
-            <a href="<?php echo base_url() ?>admin/dashboard"><i class="zmdi zmdi-home"></i> Home</a>
+            <a href="<?php echo base_url()?>admin/dashboard"><i class="zmdi zmdi-home"></i> Home</a>
         </li>
     </ul>
 </aside>
