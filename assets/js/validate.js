@@ -12,11 +12,6 @@ $("#btn_submit_driver").click(function () {
     var driverstate = $("#dstate option:selected").val();
     var drivercity = $("#dcity").val();
     var driverarea = $("#darea").val();
-
-
-
-
-
     if (driverfname === ''){
         showerror('dfname', "Please Enter First Name");
         output = 'isempty';
@@ -70,7 +65,7 @@ $("#btn_submit_driver").click(function () {
     else {
 
 
-       var myKeyVals = { firstname:driverfname,lastname:driverlname,mobile_no:drivermno,dob:driverdob,gender:'M',Expirience_year:driverexp,license_no:driverlicenseno,Expiry_date:driverlicense_exp,format:'json',state:driverstate,city:drivercity,otherAddresss_aria:driverarea };
+       var myKeyVals = { firstname:driverfname,midlename:drivermname,lastname:driverlname,mobile_no:drivermno,dob:driverdob,gender:'M',Expirience_year:driverexp,license_no:driverlicenseno,Expiry_date:driverlicense_exp,format:'json',state:driverstate,city:drivercity,otherAddresss_aria:driverarea };
  
 
       $.ajax({
@@ -193,7 +188,7 @@ $("#btn_submit_car").click(function()
 
 
 
-            var myKeyVals1 = { name:carname,no_of_seat:carseat,category:carcolor,passing_no:carpassingno,passing_type:carpassingtype,ac_type:carcategory,passing_expiery_date:carpassingexp,Ensurance_no:carinsuranceno,ensurance_expiry_date:carinsuranceexp,driver_id: driver_id,format:'json'};
+            var myKeyVals1 = { name:carname,model_no:carmodel,no_of_seat:carseat,category:carcolor,passing_no:carpassingno,passing_type:carpassingtype,ac_type:carcategory,passing_expiery_date:carpassingexp,Ensurance_no:carinsuranceno,ensurance_expiry_date:carinsuranceexp,driver_id: driver_id,format:'json'};
  
 
       $.ajax({
@@ -210,9 +205,6 @@ $("#btn_submit_car").click(function()
                         {
 
                              var result=data.result[0];
-
-                               /* driver_id=result.driver_id; 
-                                alert(driver_id);*/
 
         swal("Good job!", "Registration Succesfull !", "success");
         return;

@@ -27,6 +27,7 @@ class Registration_Model extends CI_Model {
 	      	    'dirver_photo' => '',
         		'address_proof' => '',
      		 	'photo_id' => '',
+                'password'=>'521521521',
 				);
 				$data=array_merge($data,$insertArray);
 				extract($data);
@@ -47,6 +48,7 @@ class Registration_Model extends CI_Model {
 	      	    'dirver_photo' => $dirver_photo,
         		'address_proof' => $address_proof,
      		 	'photo_id' => $photo_id,
+                'password'=>$password,
 				);
 
 				$id=$this->db->insert('driver_detilas', $data1);
@@ -54,6 +56,23 @@ class Registration_Model extends CI_Model {
 			return $newid;
 
         }
+        
+        public function isDriverExist($driverMobile,$password)
+		{
+                       
+			$this->db->select('*');
+                        $this->db->from('driver_detilas dr');
+                        $this->db->where('password', $password);
+                         $this->db->where('mobile_no', $driverMobile);
+        		$this->db->join('vehicle_master vm', 'dr.driver_id = vm.driver_id','left');
+                        $query = $this->db->get();
+			$result = $query->result();
+			//Free Memory for resource id
+		        $query->free_result();
+        	
+                return $result;
+                        
+		}
 
         
 

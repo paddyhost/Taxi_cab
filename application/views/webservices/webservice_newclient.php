@@ -46,16 +46,21 @@ if ($format == 'json') {
 		$xmlout .= '<count>'. $count .'</count>';
 		$xmlout .= '<type>'. $type .'</type>';
 		$xmlout .= '<result>';
-		$xmlout .= '<record>';
-		foreach ($result as $key => $val) {
-				//$xmlout .= '<'.$key.'>'.$val.'</'.$key.'>';
+		
+                foreach ($result as  $row) 
+                {
+                    $xmlout .= '<record>';
+                    foreach ($row as $key => $val) {
+			$xmlout .= '<'.$key.'>'.$val.'</'.$key.'>';
 			/*$xmlout .='<clientno>'.$result->clientmaster_id.'</clientno>';
 			$xmlout .='<otp>'.$result->otp.'</otp>';
 			$xmlout .='<datetime>'.$result->date_time.'</datetime>';
 			$xmlout .='<mobileoremail>'.$result->mobile_email.'</mobileoremail>';
 			$xmlout .='<moreinfo>'.$result->moreinfo.'</moreinfo>';*/
-		}
+                    }
+                    
 		$xmlout .= '</record>';
+                }
 		$xmlout .= '</result>';
 		$xmlout .= '<message>'. $message .'</message>';
     $xmlout .= '</newclient>';
