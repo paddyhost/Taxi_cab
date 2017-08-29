@@ -32,38 +32,35 @@ class Admin extends CI_Controller {
 
         // Your own constructor code
     }
+
     public function index() {
         $this->load->view("login");
     }
+
     public function dashboard() {
-      $result=$this->session->get_userdata('login');
-      
-      
-      
-      if(isset($result)&&  count($result)>1)
-      {
-        $this->load->view("index");
-      }
-      else
-      {
-          $this->load->view("login");
-      }
-        
+        $result = $this->session->get_userdata('login');
+
+
+
+        if (isset($result) && count($result) > 1) {
+            $this->load->view("index");
+        } else {
+            $this->load->view("login");
+        }
     }
+
     public function registration() {
-         $result=$this->session->get_userdata('login');
-      
-      
-      
-      if(isset($result)&&  count($result)>1)
-      {
-        $this->load->view('registration');
+        $result = $this->session->get_userdata('login');
+
+
+
+        if (isset($result) && count($result) > 1) {
+            $this->load->view('registration');
+        } else {
+            $this->load->view('login');
+        }
     }
-    else
-    {
-         $this->load->view('login');
-    }
-    }
+
     public function api_registerDriver() {
         $data = $result = array();
         $status = $type = $message = '';
@@ -117,6 +114,7 @@ class Admin extends CI_Controller {
 
         $this->load->view('webservices/webservice_newclient', $data);
     }
+
     public function api_registerCar() {
         $data = $result = array();
         $status = $type = $message = '';
@@ -166,8 +164,9 @@ class Admin extends CI_Controller {
         $data['message'] = $message;
         $this->load->view('webservices/webservice_newclient', $data);
     }
+
     public function api_login() {
- 
+
         $data = $result = array();
         $status = $type = $message = '';
         $count = 0;
@@ -182,27 +181,25 @@ class Admin extends CI_Controller {
                 $type = 'api_login';
                 $message = 'Login successfully';
                 $count = count($result);
-        
-                
-                $this->session->set_userdata('login',$result[0]);
-               
-               
-               // $this-> session_write_close();
+
+
+                $this->session->set_userdata('login', $result[0]);
+
+
+                // $this-> session_write_close();
                 //$this->session->session_write_close();
-            }
-            else
-            {
+            } else {
                 $status = 'failed';
                 $type = 'api_login';
                 $message = 'User Not exist';
                 $count = count($result);
             }
         } else {
-            
-             $status = 'failed';
-             $type = 'login';
-             $message = 'Invalid Api Key';
-             $count = 0; 
+
+            $status = 'failed';
+            $type = 'login';
+            $message = 'Invalid Api Key';
+            $count = 0;
         }
         $data['status'] = $status;
         $data['count'] = $count;
@@ -211,24 +208,21 @@ class Admin extends CI_Controller {
         $data['message'] = $message;
         $this->load->view('webservices/webservice_newclient', $data);
     }
-    public function logout()
-    {
-       $data = $result = array();
-       $status = $type = $message = '';
-       $count = 0;
-       $data['key'] = TRUE;
-       $data['format'] = $this->input->get_post('format');
-       
+
+    public function logout() {
+        $data = $result = array();
+        $status = $type = $message = '';
+        $count = 0;
+        $data['key'] = TRUE;
+        $data['format'] = $this->input->get_post('format');
+
         if ($data['key'] == TRUE) {
-            
-            
-                $this->session->unset_userdata('login');
-                
-        $this->load->view("login");
-               
-            
+
+
+            $this->session->unset_userdata('login');
+
+            $this->load->view("login");
         }
-        
     }
 
 }
