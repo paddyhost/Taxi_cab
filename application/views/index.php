@@ -7,7 +7,7 @@
         <title>Taxi Cab</title>
         <?php $this->load->view("commoncss");?>
     </head>
-    <body>
+    <body class="sw-toggled">
         <?php $this->load->view("header");?>
         <section id="main" data-layout="layout-1">
             <?php $this->load->view("sidebar");?>
@@ -120,7 +120,7 @@
          
         <ul id="menu" class="mfb-component--br mfb-zoomin" data-mfb-toggle="hover">
             <li class="mfb-component__wrap">
-                <a href="<?php echo base_url()?>admin/registration/" data-mfb-label="Add Driver" class="mfb-component__button--main">
+                <a href="/admin/registration/" data-mfb-label="Add Driver" class="mfb-component__button--main">
                     <i class="mfb-component__main-icon--resting ion-plus-round"></i>
                     <i class="mfb-component__main-icon--active ion-close-round"></i>   
                 </a>

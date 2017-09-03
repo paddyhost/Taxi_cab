@@ -9,7 +9,7 @@
         </li>-->
 
         <li class="logo hidden-xs">
-            <a href="old_index.html">Taxi Cab</a>
+            <a href="/admin/dashboard">Taxi Cab</a>
         </li>
         <li class="pull-right">
             <ul class="top-menu">
@@ -20,7 +20,7 @@
                     </div>
                 </li>-->
                 <li class="menu-hint p-t-10 c-green">About</li>
-                <li class="menu-hint p-t-10">Contact for support : <i class="zmdi zmdi-phone zmdi-hc-fw f-16 c-green"></i> +919860402800 / <i class="zmdi zmdi-email zmdi-hc-fw f-16 c-green"></i> gote.prasad@yahoo.in</li>
+                <li class="menu-hint p-t-10">Contact for support : <i class="zmdi zmdi-phone zmdi-hc-fw f-16 c-green"></i> +919860402800 / <i class="zmdi zmdi-email zmdi-hc-fw f-16 c-green"></i> taxicab2121@gmail.com</li>
                 <li id="top-search">
                     <a href=""><i class="tm-icon zmdi zmdi-search"></i></a>
                 </li>

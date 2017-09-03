@@ -69,7 +69,7 @@ $("#btn_submit_driver").click(function () {
  
 
       $.ajax({
-                    url: 'http://localhost/taxi_cab/admin/api_registerDriver',
+                    url: '/admin/api_registerDriver',
                      type: "POST",
                       dataType: "json",
                     data:myKeyVals,
@@ -192,7 +192,7 @@ $("#btn_submit_car").click(function()
  
 
       $.ajax({
-                    url: 'http://localhost/taxi_cab/admin/api_registerCar',
+                    url: '/admin/api_registerCar',
                      type: "POST",
                       dataType: "json",
                     data:myKeyVals1,

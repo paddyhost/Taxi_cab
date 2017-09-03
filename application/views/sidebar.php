@@ -2,7 +2,7 @@
     <div class="profile-menu">
         <a href="">
             <div class="profile-pic">
-                <img src="<?php echo base_url()?>assets/img/profile-pics/1.jpg" alt="">
+                <img src="/assets/img/profile-pics/1.jpg" alt="">
             </div>
 
             <div class="profile-info">
@@ -22,10 +22,10 @@
             <a href=""><i class="zmdi zmdi-settings"></i> Settings</a>
         </li>
         <li>
-            <a href="http://localhost/taxi_cab/Admin/logout"><i class="zmdi zmdi-time-restore"></i> Logout</a>
+            <a href="/admin/logout"><i class="zmdi zmdi-time-restore"></i> Logout</a>
         </li>
         <li class="active">
-            <a href="<?php echo base_url()?>admin/dashboard"><i class="zmdi zmdi-home"></i> Home</a>
+            <a href="/admin/dashboard"><i class="zmdi zmdi-home"></i> Home</a>
         </li>
     </ul>
 </aside>
@@ -42,7 +42,7 @@
         <a class="lv-item" href="">
             <div class="media">
                 <div class="pull-left p-relative">
-                    <img class="lv-img-sm" src="<?php echo base_url()?>assets/img/profile-pics/2.jpg" alt="">
+                    <img class="lv-img-sm" src="/assets/img/profile-pics/2.jpg" alt="">
                     <i class="chat-status-busy"></i>
                 </div>
                 <div class="media-body">
@@ -55,7 +55,7 @@
         <a class="lv-item" href="">
             <div class="media">
                 <div class="pull-left">
-                    <img class="lv-img-sm" src="<?php echo base_url()?>assets/img/profile-pics/1.jpg" alt="">
+                    <img class="lv-img-sm" src="/assets/img/profile-pics/1.jpg" alt="">
                 </div>
                 <div class="media-body">
                     <div class="lv-title">David Belle</div>
@@ -67,7 +67,7 @@
         <a class="lv-item" href="">
             <div class="media">
                 <div class="pull-left p-relative">
-                    <img class="lv-img-sm" src="<?php echo base_url()?>assets/img/profile-pics/3.jpg" alt="">
+                    <img class="lv-img-sm" src="/assets/img/profile-pics/3.jpg" alt="">
                     <i class="chat-status-online"></i>
                 </div>
                 <div class="media-body">
@@ -80,7 +80,7 @@
         <a class="lv-item" href="">
             <div class="media">
                 <div class="pull-left p-relative">
-                    <img class="lv-img-sm" src="<?php echo base_url()?>assets/img/profile-pics/4.jpg" alt="">
+                    <img class="lv-img-sm" src="/assets/img/profile-pics/4.jpg" alt="">
                     <i class="chat-status-online"></i>
                 </div>
                 <div class="media-body">
@@ -93,7 +93,7 @@
         <a class="lv-item" href="">
             <div class="media">
                 <div class="pull-left">
-                    <img class="lv-img-sm" src="<?php echo base_url()?>assets/img/profile-pics/5.jpg" alt="">
+                    <img class="lv-img-sm" src="/assets/img/profile-pics/5.jpg" alt="">
                 </div>
                 <div class="media-body">
                     <div class="lv-title">Bill Phillips</div>
@@ -105,7 +105,7 @@
         <a class="lv-item" href="">
             <div class="media">
                 <div class="pull-left">
-                    <img class="lv-img-sm" src="<?php echo base_url()?>assets/img/profile-pics/6.jpg" alt="">
+                    <img class="lv-img-sm" src="/assets/img/profile-pics/6.jpg" alt="">
                 </div>
                 <div class="media-body">
                     <div class="lv-title">Wendy Mitchell</div>
@@ -116,7 +116,7 @@
         <a class="lv-item" href="">
             <div class="media">
                 <div class="pull-left p-relative">
-                    <img class="lv-img-sm" src="<?php echo base_url()?>assets/img/profile-pics/7.jpg" alt="">
+                    <img class="lv-img-sm" src="/assets/img/profile-pics/7.jpg" alt="">
                     <i class="chat-status-busy"></i>
                 </div>
                 <div class="media-body">
