@@ -2023,7 +2023,7 @@ hr.fc-divider {
 
 .bootstrap-select > .btn-default:not(.disabled):after,
 .bootstrap-select > .btn-default:not(.readonly):after {
-  background: #2196f3;
+  background: #30cb70;
 }
 
 .bootstrap-select > .btn-default.disabled:after,

@@ -109,7 +109,7 @@ $(document).ready(function(){
 
      var myKeyVals1 = { format:'json',username:user_name,password:password};
      $.ajax({
-              url: 'http://localhost/taxi_cab/admin/api_login',
+              url: '/admin/api_login',
               type: "POST",
               dataType: "json",
               data:myKeyVals1,
@@ -122,7 +122,7 @@ $(document).ready(function(){
                     {
                        
                    //  swal("Good job!", "Login Succesfull !", "success");
-                    window.location.href = "http://localhost/taxi_cab/admin/dashboard";
+                    window.location.href = "/admin/dashboard";
                      
                      return;
 

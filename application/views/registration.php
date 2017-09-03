@@ -9,7 +9,7 @@
         <title>Taxi Cab | Registration</title>
         <?php $this->load->view('commoncss');?>
     </head>
-    <body>
+    <body class="sw-toggled">
         <?php $this->load->view('header');?>
         <section id="main" data-layout="layout-1">
             <?php $this->load->view('sidebar');?>
@@ -164,7 +164,7 @@
                                     <div class="form-group col-md-4 col-sm-4 col-xs-12">
                                         <label>Model No.</label>
                                         <div class="fg-line">
-                                            <input class="form-control" placeholder="Model No." type="text" id="cmodel" name="cmodel" data-mask="0000000000">
+                                            <input class="form-control" placeholder="Model No." type="text" id="cmodel" name="cmodel">
                                         </div>
                                         <small style="display: none" class="help-block"></small>
                                     </div>
