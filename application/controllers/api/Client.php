@@ -13,7 +13,8 @@ class Client extends CI_Controller {
         $this->load->helper('url');
         $this->load->model('client_model');
         $this->load->model('vehicle_model');
-        //       $this->load->model('account_model');
+        
+         $this->load->model('ride_model');
         // Your own constructor code
     }
 
@@ -148,4 +149,113 @@ class Client extends CI_Controller {
         $this->load->view('webservices/webservice_newclient', $data);
     }
 
+    public function addNewRide()
+    {
+        
+        $data = $result = array();
+        $status = $type = $message = '';
+        $count = 0;
+        // $data['key'] = $this->isValidKey($this->input->get_post('key'));
+        $data['key'] = TRUE;
+        $data['format'] = $this->input->get_post('format'); 
+        $client_id = $this->input->get_post('client_id');
+        if ($data['key'] == TRUE) {
+            // $password = random_string('alnum', 8);
+            $arrdata = array(
+            's_langitude' => $this->input->get_post('s_langitude'),
+            's_latitude' => $this->input->get_post('s_latitude'),
+            'd_langitude' => $this->input->get_post('d_langitude'),
+            'd_latitude' => $this->input->get_post('d_latitude'),
+            'client_id' => $this->input->get_post('client_id'),
+            'Driver_id' => $this->input->get_post('driver_id'),
+            'distance' => $this->input->get_post('distance'),
+            'amount' => $this->input->get_post('amount'),
+            'vehicle_id' => $this->input->get_post('vehicle_id'),
+            'ride_type' => $this->input->get_post('ride_type'),
+            'ride_datetime' => $this->input->get_post('ride_datetime')==null?'':$this->input->get_post('ride_datetime'),
+            );
+
+            $client = $this->client_model->getClientDetailsById($client_id);
+
+            if (count($client) == 1) 
+            {
+                $ride_id = $this->ride_model->addRide($arrdata);
+
+                if ($ride_id > 0) {
+                    $ridedetails = $this->ride_model->getRide($ride_id);
+                    $count = count($ridedetails);
+                    $status = 'success';
+                    $result = $ridedetails;
+                    $message = 'Ride registered successfully';
+                } else {
+                    $status = 'failed';
+                    $message = 'Ride Not registered';
+                }
+            }
+            else
+            {
+                
+                $count = 0;
+                $status = 'error';
+        //        $result = [];
+                $message = 'Client not Exists';
+            }
+            $type = 'addNewRide';
+        } else {
+            $status = $type = 'error';
+            $message = 'Invalid key';
+        }
+        $data['status'] = $status;
+        $data['count'] = $count;
+        $data['type'] = $type;
+        $data['result'] = $result;
+        $data['message'] = $message;
+        $this->load->view('webservices/webservice_newclient', $data);
+        
+    }
+    
+    public function updateRide()
+    {
+        $data = $result = array();
+        $status = $type = $message = '';
+        $count = 0;
+        // $data['key'] = $this->isValidKey($this->input->get_post('key'));
+        $data['key'] = TRUE;
+        $data['format'] = $this->input->get_post('format'); 
+        $status_update = $this->input->get_post('status');
+        $ride_id = $this->input->get_post('ride_id');
+
+        if ($data['key'] == TRUE) {
+            // $password = random_string('alnum', 8);
+          
+
+            //$client = $this->client_model->getClientDetailsById($client_id);
+
+                $rows = $this->ride_model->updateRideStatus($ride_id,$status_update);
+
+                if (count($rows) > 0) {
+                    $ridedetails = '';// $this->ride_model->getRide($ride_id);
+                    $count = count($rows);
+                    $status = 'success';
+                    $result = $rows;
+                    $message = 'Ride updated successfully';
+                } else {
+                    $status = 'failed';
+                    $message = 'Ride Not updated';
+                }
+               $type = 'updateRide';
+        } else {
+            $status = $type = 'error';
+            $message = 'Invalid key';
+        }
+        $data['status'] = $status;
+        $data['count'] = $count;
+        $data['type'] = $type;
+        $data['result'] = $result;
+        $data['message'] = $message;
+        $this->load->view('webservices/webservice_newclient', $data);
+        
+        
+    }
+    
 }
